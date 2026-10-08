@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Agregar imagen de fondo -->
+
+    <ImageView
+        android:id="@+id/imgfondo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/fondo1"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardlogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="20dp"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layoucontenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="28dp">
+
+            <!-- Titulo de la pantalla  -->
+
+            <TextView
+                android:id="@+id/tvtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio de Sesión"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#FF007F"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="30dp"
+                />
+
+
+            <EditText
+                android:id="@+id/etcorreo"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/bg_input"
+                android:hint="Correo"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:textColor="#A600FF"
+                android:textColorHint="#9D00FF"
+                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/baseline_email_24"
+                android:drawablePadding="10dp"
+                />
+
+            <EditText
+                android:id="@+id/etpass"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/bg_input"
+                android:hint="Contraseña"
+                android:paddingEnd="15dp"
+                android:paddingStart="15dp"
+                android:textColor="#A600FF"
+                android:textColorHint="#9D00FF"
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/baseline_adjust_24"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="20dp"
+                />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btningresar"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Ingresar"
+                    android:background="@drawable/bg_button"
+                    android:layout_marginTop="40dp"
+                    android:textColor="#00FFE6"
+                    android:textStyle="bold"
+                    android:gravity="center"
+
+                    />
+
+            <!-- Opcion para regirtrar  -->
+            <TextView
+                android:id="@+id/tvcrearcuenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crea una cuenta → "
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="#9000FF"
+                android:layout_marginBottom="50sp"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
