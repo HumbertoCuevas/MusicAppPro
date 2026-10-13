@@ -84,5 +84,37 @@ class Databasehelper(context: Context) : SQLiteOpenHelper(
 
     }
 
+    //metodo para iniciar sesion consulta ,
+    fun iniciarSesion(correo: String, password: String): Boolean {
+
+        //variable que lee la base de datos
+        val db = readableDatabase
+
+        //crear consulta
+
+        val query_sql = """
+            SELECT * FROM $TABLE_USUARIOS
+            WHERE $COL_CORREO = ? AND $COL_CONTRASEÑA = ?
+           """.trimIndent()
+
+        // crear un cursos qe permite reccore todos los registros
+        val cursos = db.rawQuery(query_sql, arrayOf(correo, password))
+
+        //verificar cuantso resultaso encuentra el curso
+        val usuairoentonctrado = cursos.count > 0
+        //cerrar conexion de la base de datos
+        cursos.close()
+        db.close()
+
+        return usuairoentonctrado
+
+
+
+
+
+    }
+
+
+
 
 }
