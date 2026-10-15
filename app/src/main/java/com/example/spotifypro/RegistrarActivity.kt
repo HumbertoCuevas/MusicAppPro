@@ -1,6 +1,5 @@
 package com.example.spotifypro
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
@@ -34,8 +33,8 @@ class RegistrarActivity : AppCompatActivity() {
 
         val tviniciarsesion = findViewById<TextView>(R.id.tviniciarsesion)
         tviniciarsesion.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent) }
+            finish()
+        }
 
         //iniciarlizar los objetos del los compontentes
         etnombre = findViewById(R.id.etnombre)
@@ -62,7 +61,7 @@ class RegistrarActivity : AppCompatActivity() {
         val password = etpass.text.toString().trim()
 
         if(nombre.isEmpty() || correo.isEmpty() || password.isEmpty()){
-            Toast.makeText(this, "Completa todos los campos si", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
             return
         }
 

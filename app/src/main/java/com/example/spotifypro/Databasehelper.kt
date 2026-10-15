@@ -19,14 +19,14 @@ class Databasehelper(context: Context) : SQLiteOpenHelper(
     companion object {
         //informacion de la bd
         private const val DATABSE_NAME = "music.db"
-        private const val DATABASE_VERSION = 2
+        private const val DATABASE_VERSION = 3
 
         //informacion de las trabjas en la bd
         private const val TABLE_USUARIOS = "usuarios"
         private const val COL_ID = "id"
         private const val COL_NOMBRE = "nombre"
         private const val COL_CORREO = "correo"
-        private const val COL_CONTRASEÑA = "contraseña"
+        private const val COL_CONTRASENA = "contrasena"
     }
 
     //metodo oncreate - para crear la bd
@@ -37,7 +37,7 @@ class Databasehelper(context: Context) : SQLiteOpenHelper(
                 $COL_ID INTEGER PRIMARY KEY AUTOINCREMENT,
                 $COL_NOMBRE TEXT NOT NULL,
                 $COL_CORREO TEXT NOT NULL,
-                $COL_CONTRASEÑA TEXT NOT NULL
+                $COL_CONTRASENA TEXT NOT NULL
             )
         """.trimIndent()
 
@@ -68,7 +68,7 @@ class Databasehelper(context: Context) : SQLiteOpenHelper(
         val datos = ContentValues().apply{
             put(COL_NOMBRE, nombre )
             put(COL_CORREO, correo)
-            put(COL_CONTRASEÑA, password)
+            put(COL_CONTRASENA, password)
 
         }
         //ejecutar insercion de datos
@@ -94,7 +94,7 @@ class Databasehelper(context: Context) : SQLiteOpenHelper(
 
         val query_sql = """
             SELECT * FROM $TABLE_USUARIOS
-            WHERE $COL_CORREO = ? AND $COL_CONTRASEÑA = ?
+            WHERE $COL_CORREO = ? AND $COL_CONTRASENA = ?
            """.trimIndent()
 
         // crear un cursos qe permite reccore todos los registros
