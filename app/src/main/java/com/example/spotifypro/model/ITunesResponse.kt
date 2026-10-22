@@ -1,3 +1,9 @@
 package com.example.spotifypro.model
 
-data class ITunesResponse()
+//Archivo para recibir la respuesta de confirmacion del api
+
+data class ITunesResponse(
+
+    val resultCount : Int,
+    val results : List<Album>
+)
